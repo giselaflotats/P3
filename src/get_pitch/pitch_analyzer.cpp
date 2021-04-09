@@ -12,13 +12,12 @@ namespace upc {
 
     for (unsigned int l = 0; l < r.size(); ++l) {
   		/// \TODO Compute the autocorrelation r[l]
-      r[l]=0;
-      for(unsigned int j = 0; j<x.size()-l;++j){
+      r[l] = 0; 
+      for (unsigned int j=0; j < x.size()-l; ++j) {
         r[l] += x[j]*x[j+l];
       }
-      r[l] /= x.size();
-      /// \DONE autocorrelation computada
-      
+      r[l] /= x.size(); 
+      /// \DONE Autocorrelation computada
     }
 
     if (r[0] == 0.0F) //to avoid log() and divide zero 
@@ -73,8 +72,8 @@ namespace upc {
     //Compute correlation
     autocorrelation(x, r);
 
-    //vector<float>::const_iterator iR = r.begin(), iRMax = iR + npitch_min;
-    vector<float>:: const_iterator iRMax = r.begin() + npitch_min;
+  //vector<float>::const_iterator iR = r.begin(), 
+  vector<float>::const_iterator  iRMax = r.begin() + npitch_min;
 
     /// \TODO 
 	/// Find the lag of the maximum value of the autocorrelation away from the origin.<br>
@@ -82,7 +81,13 @@ namespace upc {
 	///    - The first negative value of the autocorrelation.
 	///    - The lag corresponding to the maximum value of the pitch.
     ///	   .
-	/// In either case, the lag should not exceed that of the minimum value of the pitch.
+	/// In either case, the lag should not exceed that of the minimum value of the pitch.ç
+
+  for(vector<float>::const_iterator iR = iRMax; iR < r.end(); iR++){
+    if(*iR>*iRMax){
+      iRMax = iR; 
+    }
+  }
 
     for(vector<float>::const_iterator iR = iRMax ;iR<r.end(); iR++){
       if(*iR>*iRMax){
