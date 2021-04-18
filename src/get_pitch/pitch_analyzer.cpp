@@ -124,6 +124,12 @@ namespace upc {
     ++iR; 
   }
 
+    for(vector<float>::const_iterator iR = iRMax ;iR<r.end(); iR++){
+      if(*iR>*iRMax){
+        iRMax=iR;
+      }
+    }
+
     unsigned int lag = iRMax - r.begin();
 
     float pot = 10 * log10(r[0]);
