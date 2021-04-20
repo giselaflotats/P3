@@ -68,7 +68,7 @@ namespace upc {
     /// * You can use the standard features (pot, r1norm, rmaxnorm),
     ///   or compute and use other ones.
 
-    if (pot < -49.5 || r1norm < 0.735 || rmaxnorm < 0.35) {
+  if (pot < -49.5 || r1norm < 0.78 || rmaxnorm < 0.37) {
     return true; 
   } else {
     return false; 

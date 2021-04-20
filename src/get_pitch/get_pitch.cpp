@@ -72,7 +72,7 @@ int main(int argc, const char *argv[]) {
   }
   potencia /= x.size(); 
 
-  float thereshold = 0.3 * potencia; 
+  float thereshold = 0.8 * potencia; 
 
   for(unsigned int n = 0; n < x.size(); n++){
     if(x[n] >= thereshold){
@@ -104,7 +104,7 @@ int main(int argc, const char *argv[]) {
   int n = 3; 
   vector<float>finestra(n); 
   for(unsigned int i = 1; i < f0.size()-1; ++i){
-    for(unsigned int j=0; j < n; j++){
+    for(unsigned int j = 0; j < n; j++){
       finestra[j]=f0[i-1+j]; 
     }
     sort(finestra.begin(), finestra.end()); 
