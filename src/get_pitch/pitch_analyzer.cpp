@@ -67,11 +67,13 @@ namespace upc {
     /// \TODO Implement a rule to decide whether the sound is voiced or not.
     /// * You can use the standard features (pot, r1norm, rmaxnorm),
     ///   or compute and use other ones.
-    if (pot < -50 || r1norm < 0.70 || rmaxnorm < 0.3) {
+
+    if (pot < -49.5 || r1norm < 0.735 || rmaxnorm < 0.35) {
     return true; 
   } else {
     return false; 
   }
+
   /// \ DONE 
   /// Ara diferenciem en sons sonors (false) i sords (true) segons uns paràmetres que hem anat variant per trobar els que més s'acostaven
   /// Hem utilitzat els valors estàndar que se'ns donaven, la potència, la rmax normalitzada i la r1 normalitzada també (és a dir els valors 
@@ -113,7 +115,7 @@ namespace upc {
 
   iRMax = iR; 
 
-  for(vector<float>::const_iterator iR = iRMax; iR < r.end(); iR++){
+  for(vector<float>::const_iterator iR = iRMax; iR < r.end(); ++iR){
     if(*iR>*iRMax){
       iRAbans = iR-1; 
       iRDespres = iR+1; 
@@ -121,10 +123,9 @@ namespace upc {
         iRMax = iR; 
       }
     }
-    ++iR; 
   }
 
-    for(vector<float>::const_iterator iR = iRMax ;iR<r.end(); iR++){
+    for(vector<float>::const_iterator iR = iRMax ;iR<r.end(); ++iR){
       if(*iR>*iRMax){
         iRMax=iR;
       }
