@@ -3,3 +3,5 @@
 /__MAC*
 Makefile 
 ./DS_Store
+.vscode
+.DS_Store
