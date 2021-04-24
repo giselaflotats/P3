@@ -71,6 +71,7 @@ Ejercicios básicos
   <img src = 'https://github.com/giselaflotats/P3/blob/flotats-izquierdo/imatges/Summary.png'>
 
   *NOTA* aquests resultats son amb les ampliacions (tot i així no han afectat massa el resultat)
+  Podem observar com el major marge d'error el trobem escollint frames sonores com a sordes. 
 
    * Inserte una gráfica en la que se vea con claridad el resultado de su detector de pitch junto al del
      detector de Wavesurfer. Aunque puede usarse Wavesurfer para obtener la representación, se valorará
@@ -112,7 +113,7 @@ Ejercicios de ampliación
   Incluya, a continuación, una explicación de las técnicas incorporadas al detector. Se valorará la
   inclusión de gráficas, tablas, código o cualquier otra cosa que ayude a comprender el trabajo realizado.
 
-  #CENTER CLIPPING
+  CENTER CLIPPING
 
    Com a técnica de preprocessat hem aplicat center clipping, una transformació no lineal que té com a funció en posar a 0 els valors entre uns thresholds establerts, que hem calculat a partir de la poténcia de la senyal. Amb aquest métode, eliminem la part de senyal que no ens interessa i ens quedem amb la que sí. A la pràctica, el fet d'aplicar el center clipping no ha augmentat molt les presteacions ja que ha augmentat el 0,5% la evaluació utilitzant la base de dades.
 
@@ -121,20 +122,20 @@ Ejercicios de ampliación
 
    <img src = 'https://github.com/giselaflotats/P3/blob/flotats-izquierdo/imatges/CenterClipping.png'>
 
-  #FILTRO DE MEDIANA
+  FILTRO DE MEDIANA
     - Pel que fa a la técnica del postprocessat, hem aplicat el filtre de mediana. El que fa és reemplaçar el valor del pitch per la mediana dels valors del voltant. d'aquesta manera eliminem possibles errors deguts a pics o valls puntuals. Hem utilitzat una mida de finestra d'un valor de 3 de llargada.
 
     <img src = 'https://github.com/giselaflotats/P3/blob/flotats-izquierdo/imatges/3medianes.png'>
 
     Adjuntem també, per comparar, els resultats amb una finestra de 2 i 5: 
 
-      - finestra de 2
+   - finestra de 2
 
-      <img src = 'https://github.com/giselaflotats/P3/blob/flotats-izquierdo/imatges/2medianes.png'>
+    <img src = 'https://github.com/giselaflotats/P3/blob/flotats-izquierdo/imatges/2medianes.png'>
+  
+    - finestra de 5
 
-      - finestra de 5
-
-      <img src = 'https://github.com/giselaflotats/P3/blob/flotats-izquierdo/imatges/5medianes.png'>
+    <img src = 'https://github.com/giselaflotats/P3/blob/flotats-izquierdo/imatges/5medianes.png'>
 
   También se valorará la realización de un estudio de los parámetros involucrados. Por ejemplo, si se opta
   por implementar el filtro de mediana, se valorará el análisis de los resultados obtenidos en función de
