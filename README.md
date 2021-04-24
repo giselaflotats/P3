@@ -33,6 +33,8 @@ Ejercicios básicos
 
    * Implemente la regla de decisión sonoro o sordo e inserte el código correspondiente.
 
+   <img src ='https://github.com/giselaflotats/P3/blob/flotats-izquierdo/imatges/voicedunvoiced.png'>
+
       - Per tal d'aconseguir el resultat óptim, hem estat jugant amb els diferents llindars. Hem utilitzat 3 condicions per tal d'identificar si estavem tractant amb un voiced(false) o un unvoiced(true). 
 
 - Una vez completados los puntos anteriores, dispondrá de una primera versión del detector de pitch. El 
@@ -76,6 +78,9 @@ Ejercicios básicos
    * Inserte una gráfica en la que se vea con claridad el resultado de su detector de pitch junto al del
      detector de Wavesurfer. Aunque puede usarse Wavesurfer para obtener la representación, se valorará
 	 el uso de alternativas de mayor calidad (particularmente Python).
+
+  <img src = 'https://github.com/giselaflotats/P3/blob/flotats-izquierdo/imatges/WS_Pitch.png'>
+
    
 
 Ejercicios de ampliación
