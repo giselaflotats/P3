@@ -72,14 +72,14 @@ int main(int argc, const char *argv[]) {
   }
   potencia /= x.size(); 
 
-  float thereshold = 0.8 * potencia; 
+  float thereshold = 0.75 * potencia; 
 
   for(unsigned int n = 0; n < x.size(); n++){
     if(x[n] >= thereshold){
       x[n] -= thereshold; 
     } else if (x[n]<= thereshold){
       x[n] +=thereshold; 
-    } else if(abs(x[n]) < thereshold) {
+    } else {
       x[n] = 0; 
     }
   }

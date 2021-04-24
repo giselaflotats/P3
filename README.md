@@ -22,12 +22,12 @@ Ejercicios básicos
 	 NOTA: es más que probable que tenga que usar Python, Octave/MATLAB u otro programa semejante para
 	 hacerlo. Se valorará la utilización de la librería matplotlib de Python.
 
-   <img src='https://github.com/giselaflotats/P3/blob/flotats-izquierdo/images/Figure_1.png'>
-
    * Determine el mejor candidato para el periodo de pitch localizando el primer máximo secundario de la
      autocorrelación. Inserte a continuación el código correspondiente.
 
    * Implemente la regla de decisión sonoro o sordo e inserte el código correspondiente.
+
+      - Per tal d'aconseguir el resultat óptim, hem estat jugant amb els diferents llindars. Hem utilitzat 3 condicions per tal d'identificar si estavem tractant amb un voiced(false) o un unvoiced(true). 
 
 - Una vez completados los puntos anteriores, dispondrá de una primera versión del detector de pitch. El 
   resto del trabajo consiste, básicamente, en obtener las mejores prestaciones posibles con él.
@@ -77,7 +77,13 @@ Ejercicios de ampliación
   Entre las posibles mejoras, puede escoger una o más de las siguientes:
 
   * Técnicas de preprocesado: filtrado paso bajo, *center clipping*, etc.
+
+      - Com a técnica de preprocessat hem aplicat center clipping, una transformació no lineal que té com a funció en posar a 0 els valors entre uns thresholds establerts, que hem calculat a partir de la poténcia de la senyal. Amb aquest métode, eliminem la part de senyal que no ens interessa i ens quedem amb la que sí. A la pràctica, el fet d'aplicar el center clipping no ha augmentat molt les presteacions ja que ha augmentat el 0,5% la evaluació utilitzant la base de adades.
+
   * Técnicas de postprocesado: filtro de mediana, *dynamic time warping*, etc.
+
+      - Pel que fa a la técnica del postprocessat, hem aplicat el filtre de mediana. El que fa és reemplaçar el valor del pitch per la mediana dels valors del voltant. d'aquesta manera eliminem possibles errors deguts a pics o valls puntuals. Hem utilitzat una mida de finestra d'un valor de 3 de llargada.
+
   * Métodos alternativos a la autocorrelación: procesado cepstral, *average magnitude difference function*
     (AMDF), etc.
   * Optimización **demostrable** de los parámetros que gobiernan el detector, en concreto, de los que

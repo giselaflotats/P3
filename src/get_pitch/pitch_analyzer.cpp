@@ -74,10 +74,10 @@ namespace upc {
     return false; 
   }
 
-  /// \ DONE 
-  /// Ara diferenciem en sons sonors (false) i sords (true) segons uns paràmetres que hem anat variant per trobar els que més s'acostaven
-  /// Hem utilitzat els valors estàndar que se'ns donaven, la potència, la rmax normalitzada i la r1 normalitzada també (és a dir els valors 
-  /// de r1 i rmax sempre ens sortiran positius per això posem només menor que)
+    /// \DONE 
+    /// Hem diferenciat en sons sonors (false) i sords (true) segons uns paràmetres que hem anat variant per trobar els que més s'acostaven <br>
+    /// Hem utilitzat els valors estàndar que se'ns donaven, la potència, la rmax normalitzada i la r1 normalitzada també (és a dir els valors 
+    /// de r1 i rmax sempre ens sortiran positius per això posem només menor que)
   }
 
   float PitchAnalyzer::compute_pitch(vector<float> & x) const {
@@ -135,13 +135,13 @@ namespace upc {
 
     float pot = 10 * log10(r[0]);
 
-  /// \ DONE 
-  /// Per saber el valor mínim del segon pic de l'autocorrelació (pitch)
-  /// Condició 1 iR > iRdespres ens indica que encara no hem arribat a baix de tot del primer pic
-  /// Condició 2 iR > r.begin()+npitch_min ens assegura que superem el valor mínim de pitch que hem considerat
-  /// Condició 3 iR > 0.0F ens assegura que ens passem del primer pic (en el cas de que tinguem un primer pitch molt ample)
-  /// A continuació comprovem que el valor que tenim de iRmax es troba en un pic. 
-  /// Finalment deixem el lag tal i com l'haviem calculat a classe
+    /// \DONE 
+    /// Per saber el valor mínim del segon pic de l'autocorrelació (pitch) <br>
+    /// Condició 1 iR > iRdespres ens indica que encara no hem arribat a baix de tot del primer pic <br>
+    /// Condició 2 iR > r.begin()+npitch_min ens assegura que superem el valor mínim de pitch que hem considerat <br>
+    /// Condició 3 iR > 0.0F ens assegura que ens passem del primer pic (en el cas de que tinguem un primer pitch molt ample) <br>
+    /// A continuació comprovem que el valor que tenim de iRmax es troba en un pic. <br>
+    /// Finalment deixem el lag tal i com l'haviem calculat a classe <br>
     
     //You can print these (and other) features, look at them using wavesurfer
     //Based on that, implement a rule for unvoiced
